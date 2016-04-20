@@ -1,0 +1,261 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+	<meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+       
+    <link href="{% static "web/css/ull.min.css" %}" rel="stylesheet">
+     <!--<script src="{% static "web/js/bootstrap.min.js" %}"></script>-->
+    <!--[if lt IE 9]><script src="//static.ull.es/v3/dist/js/ullie.min.js"></script><![endif]-->
+    <!-- <script src="{% static "web/js/jquery.js" %}"></script>-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <title>Universidad de La Laguna - GEDEA</title>
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "web/img/apple-touch-icon-144-precomposed.png" %}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "web/img/apple-touch-icon-114-precomposed.png" %}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="{% static "web/img/apple-touch-icon-72-precomposed.png" %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static "web/img/apple-touch-icon-57-precomposed.png" %}">
+    <link rel="shortcut icon" href="{% static "web/img/favicon.ico" %}">
+
+
+</head>
+
+<body>
+<div class="navbar navbar-default navbar-ull" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-app-collapse">
+                <span class="sr-only">Desplegar men&uacute; de aplicaci&oacute;n</span>
+                <span class="fa fa-bars fa-stack"></span>
+            </button>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <span class="sr-only">Desplegar men&uacute; de navegaci&oacute;n</span>
+                <span class="fa fa-link fa-stack"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.ull.es/" title="Universidad de La Laguna">Universidad de La Laguna</a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-main-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios telem&aacute;ticos <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a target="_blank" title="Gesti&oacute;n de perfil de usuario" href="http://usuarios.ull.es/"><i class="fa fa-user"></i> Gesti&oacute;n de perfil de usuario</a></li>
+                        <li><a target="_blank" title="Portal ULL" href="http://portal.ull.es/"><i class="fa fa-folder-open"></i> Portal</a></li>
+                        <li><a target="_blank" title="Sede electr&oacute;nica" href="http://sede.ull.es/"><i class="fa fa-briefcase"></i> Sede electr&oacute;nica</a></li>
+                        <li><a target="_blank" title="Campus Virtual" href="http://www.campusvirtual.ull.es/"><i class="fa fa-pencil"></i> Campus virtual</a></li>
+                        <li><a target="_blank" title="Correo electr&oacute;nico" href="http://ull.edu.es/"><i class="fa fa-envelope"></i> Correo electr&oacute;nico</a></li>
+                        <li><a target="_blank" title="Disco duro virtual"  href="http://ddv.ull.es/"><i class="fa fa-hdd-o"></i> Disco duro virtual</a></li>
+                        <li><a target="_blank" title="Biblioteca digital" href="http://www.bbtk.ull.es/view/institucional/bbtk/Biblioteca_Digital/es"><i class="fa fa-book"></i> Biblioteca digital</a></li>
+                        <li><a target="_blank" title="Eventos" href="http://eventos.ull.es/"><i class="fa fa-calendar"></i> Eventos</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contacto <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a target="_blank" href="http://www.ull.es/"><i class="fa fa-globe"></i> P&aacute;gina Web ULL</a></li>
+                        <li><a target="_blank" title="Formulario de contacto" href="http://www.ull.es/view/institucional/ull/Contacto_3/es"><i class="fa fa-list-alt"></i> Formulario de contacto</a></li>
+                        <li><a target="_blank" title="Tel&eacute;fonos" href="http://www.ull.es/view/institucional/ull/Telefonos/es"><i class="fa fa-phone"></i> Directorio telef&oacute;nico</a></li>
+                        <li class="divider"></li>
+                        <li>
+                            <ul class="rrss text-muted list-inline">
+                                <li><a target="_blank" href="http://www.facebook.com/universidaddelalaguna" ><i class="fa fa-facebook-square"></i></a></li>
+                                <li><a target="_blank" href="http://www.tuenti.com/#m=Page&func=index&page_key=1_160_68944913"><i class="fa fa-tumblr-square"></i></a></li>
+                                <li><a target="_blank" href="http://twitter.com/CanalULL"><i class="fa fa-twitter-square"></i></a></li>
+                                <li><a target="_blank" href="http://www.linkedin.com/groups/Universidad-Laguna-2656178"><i class="fa fa-linkedin-square"></i></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="navbar navbar-default navbar-app" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <ol class="breadcrumb">
+               <li class="active" ><a href="{% url 'main' %}">GEDEA - Gesti&oacuten de los documentos con est&aacutendares abiertos</a></li>
+              </ol>
+        </div>
+        <div class="collapse navbar-collapse navbar-app-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i> Ayuda y soporte <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a target="_blank" title="Portal de servicio" href="http://www.stic.ull.es/info/servicios/servicios/index.asp"><i class="fa fa-globe"></i> Portal de servicio</a></li>
+                        <li><a target="_blank" title="Correo electr&oacute;nico stic@ull.es" href="mailto:stic@ull.es"><i class="fa fa-envelope"></i> stic@ull.es</a></li>
+                        <li><p><i class="fa fa-phone"></i> (+34) 922 31 9180</p></li>
+                        <li><p><i class="fa fa-map-marker"></i> Edificio Central <br/> C/ Delgado Barreto s/n. 38207 <br/>San Crist&oacute;bal de La Laguna</p></li>
+                        <li class="divider"></li>
+                        <li><p>Texto espec&iacute;fico que puede incluir <a href="#">enlaces</a>, texto en <strong>negrita</strong>, <i>cursiva</i> y otros elementos html.</p></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+            <!--  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"> -->
+                <div class="col-lg-12">
+                    <div class="jumbotron">
+                        <h1>GEDEA - Gesti&oacuten de los documentos con est&aacutendares abiertos</h1>
+                        <p class="lead">
+                        
+GEDEA es una aplicaci&oacuten web para fomentar el uso de los est&aacutendares abiertos entre los usuarios de la ULL. Desde aqu&iacute podr&eacuteis ver
+una selecci&oacuten de los est&aacutendares abiertos recomendados y el tipo de contenido m&aacutes com&uacuten.
+
+ 
+ </p> 
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="alert alert-warning">
+                        <p>En el siguiente <a href="http://riull.ull.es/xmlui/handle/915/760" >documento</a>  se recoge la obligatoriedad de la ULL a utilizar est&aacutendares abiertos en la web 
+y otros medios electr&oacutenicos de difusi&oacuten; al tiempo que recomienda su uso en las comunicaciones internas de la instituci&oacuten con el objeto de preservar el acceso a los documentos a lo largo del tiempo. </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-lg-10 col-lg-push-2 portal-panels">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="panel panel-default panel-feature-success panel-success">
+                        <div class="panel-body">
+                              <div style="display: flex;align-items: center;" class="row">
+                                <div class="col-md-2 align-center">
+                                
+                                    <i class="glyphicon glyphicon-user fa-5x"></i>
+                                </div>
+                                <div class="col-md-10">
+                                    <h4>Colabora con nosotros <span class="label label-info">Novedad</span></h4>
+                                    <p>Inicia sesi&oacuten para acceder a tu perfil.</p>
+                                      <a class="btn btn-success btn-lg btn-block" href="{% url 'cas' %}">Alumnado, PDI y PAS de la ULL</a>
+                                      <a class="btn btn-success btn-lg btn-block" href="{% url 'accounts.login' %}">Otro tipo de usuarios</a>
+    								
+                                    <!--<a class="btn btn-success btn-sm" href="https://viinv.ull.es/cvninfo"><i class="fa fa-angle-double-right"></i> Acceder</a>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                             <div style="display: flex;align-items: center;" class="row">
+                                <div class="col-md-2 align-center">
+                                    <i class="fa fa-pie-chart fa-5x" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-md-10">
+                                    <h4>Estad&iacutesticas</h4>
+                                    <p>Informaci&oacute;n sobre el estado de los est&aacutendares abiertos.</p>
+                                    <a class="btn btn-primary btn-lg btn-block" href="http://sigidi.ull.es/"> Acceder</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                             <div style="display: flex;align-items: center;" class="row">
+                                <div class="col-md-2 align-center">
+                                 <i class="fa fa-info fa-5x" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-md-10">
+                                    <h4>Informaci&oacuten de los Est&aacutendares abiertos</h4>
+                                    <p>Informaci&oacute;n relevante sobre los Est&aacutendares abiertos</p>
+                                <a class="btn btn-primary btn-lg btn-block" href="http://sigidi.ull.es/"> Acceder</a>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div style="display: flex;align-items: center;" class="row">
+                                <div  class="col-md-2 align-center">
+                                   <i class="fa fa-question fa-5x" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-md-10">
+                                    <h4>FAQ</h4>
+                                    <p>Preguntas frecuentes.</p>
+                                    <a class="btn btn-primary btn-lg btn-block" href="{% url 'faq' %}"> Acceder</a>
+                                 
+                                       </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-lg-pull-10">
+            <div class="panel panel-default panel-ull color-7A3B7A">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-external-link"></i> Enlaces de inter&eacute;s</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a title="Universidad de La Laguna" href="http://www.ull.es/" target="_blank">Universidad de La Laguna</a></li>
+                        <li><a title="Oficina de Software Libre" href="https://osl.ull.es/" target="_blank">Oficina de Software Libre</a></li>
+                        <!--<li><a title="Normativa interna" href="http://www.ull.es/view/institucional/ull/Normativa_interna/es" target="_blank">Normativa interna</a></li>
+                        <li><a title="Convocatoria" href="http://www.ull.es/view/institucional/ull/Convocatorias_2/es" target="_blank">Convocatorias</a></li>
+                        <li><a title="SEGAI" href="http://www.segai.ull.es/" target="_blank">SEGAI</a></li>
+                        <li><a title="Actividades" href="http://www.ull.es/view/institucional/ull/Actividades_1/es" target="_blank">Actividades</a></li>
+                        <li><a title="Grupos e institutos de investigaci&oacute;n" href="http://www.ull.es/view/institucional/ull/Grupos_e_Institutos_de_investigacion/es" target="_blank">Grupos e insitutos de investigaci&oacute;n</a></li>
+                        <li><a title="OTRI" href="http://www.otri.ull.es/" target="_blank">OTRI</a></li>
+                        <li><a title="Clusters" href=http://www.ull.es/view/institucional/ull/Clusters/es" target="_blank">Clusters</a></li>
+                        <li><a title="Comit&eacute; de &eacute;tica" href=http://www.ull.es/view/institucional/ull/Comite_de_Etica/es" target="_blank">Comit&eacute; de &eacute;tica</a></li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <ul class="address pull-left">
+                    <li><strong>Universidad de La Laguna</strong><br/> Pabell&oacute;n de Gobierno, C/ Molinos de Agua s/n. | San Crist&oacute;bal de La Laguna, Santa Cruz de Tenerife - Espa&#241;a (38200) | Tel&eacute;fono: (+34) 922 31 90 00/01</li>
+                </ul>
+                <ul class="list-inline text-muted pull-right">
+                    <li><a title="Facebook" target="_blank" href="http://www.facebook.com/universidaddelalaguna" ><span class="fa fa-facebook-square"></span></a></li>
+                    <li><a title="Tuenti" target="_blank" href="http://www.tuenti.com/#m=Page&func=index&page_key=1_160_68944913"><i class="fa fa-tumblr-square"></i></a></li>
+                    <li><a title="Twitter" target="_blank" href="http://twitter.com/CanalULL"><i class="fa fa-twitter-square"></i></a></li>
+                    <li><a title="LinkedIn" target="_blank" href="http://www.linkedin.com/groups/Universidad-Laguna-2656178"><i class="fa fa-linkedin-square"></i></a></li>
+                    <li><a title="P&aacute;gina web ULL" target="_blank" href="http://www.ull.es/"><i class="fa fa-globe"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<!-- Mirrored from static.ull.es/v3/docs/examples/portal-2/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Apr 2016 17:36:50 GMT -->
+</html>

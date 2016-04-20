@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es" class="bg-imglogin">
+    
+<!-- Mirrored from static.ull.es/v3/docs/examples/pagina-error/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Apr 2016 17:14:22 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Universidad de La Laguna">
+        <meta name="keywords" content="Universidad de La Laguna" />
+        <meta name="author" content="Universidad de La Laguna" />
+
+        <title>Universidad de La Laguna - T&iacute;tulo aplicaci&oacute;n o servicio</title>
+
+        <link href="{% static "web/css/ull.min.css" %}" rel="stylesheet">
+    <script src="{% static "web/js/bootstrap.min.js" %}">
+    <!--[if lt IE 9]><script src="//static.ull.es/v3/dist/js/ullie.min.js"></script><![endif]-->
+    <script src="{% static "web/js/jquery.js" %}"></script>
+
+
+    <title>Universidad de La Laguna - T&iacute;tulo aplicaci&oacute;n o servicio</title>
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "web/img/apple-touch-icon-144-precomposed.png" %}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "web/img/apple-touch-icon-114-precomposed.png" %}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="{% static "web/img/apple-touch-icon-72-precomposed.png" %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static "web/img/apple-touch-icon-57-precomposed.png" %}">
+    <link rel="shortcut icon" href="{% static "web/img/favicon.ico" %}">
+    </head>
+
+    <body>
+        <div class="navbar navbar-default navbar-ull" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-app-collapse">
+                        <span class="sr-only">Desplegar men&uacute; de aplicaci&oacute;n</span>
+                        <span class="fa fa-bars fa-stack"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://www.ull.es/" title="Universidad de La Laguna">Universidad de La Laguna</a>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-main-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios telem&aacute;ticos <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a target="_blank" title="Gesti&oacute;n de perfil de usuario" href="http://usuarios.ull.es/"><i class="fa fa-user"></i> Gesti&oacute;n de perfil de usuario</a></li>
+                                <li><a target="_blank" title="Portal ULL" href="http://portal.ull.es/"><i class="fa fa-folder-open"></i> Portal</a></li>
+                                <li><a target="_blank" title="Sede electr&oacute;nica" href="http://sede.ull.es/"><i class="fa fa-briefcase"></i> Sede electr&oacute;nica</a></li>
+                                <li><a target="_blank" title="Campus Virtual" href="http://www.campusvirtual.ull.es/"><i class="fa fa-pencil"></i> Campus virtual</a></li>
+                                <li><a target="_blank" title="Correo electr&oacute;nico" href="http://ull.edu.es/"><i class="fa fa-envelope"></i> Correo electr&oacute;nico</a></li>
+                                <li><a target="_blank" title="Disco duro virtual"  href="http://ddv.ull.es/"><i class="fa fa-hdd-o"></i> Disco duro virtual</a></li>
+                                <li><a target="_blank" title="Biblioteca digital" href="http://www.bbtk.ull.es/view/institucional/bbtk/Biblioteca_Digital/es"><i class="fa fa-book"></i> Biblioteca digital</a></li>
+                                <li><a target="_blank" title="Eventos" href="http://eventos.ull.es/"><i class="fa fa-calendar"></i> Eventos</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contacto <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a target="_blank" href="http://www.ull.es/"><i class="fa fa-globe"></i> P&aacute;gina Web ULL</a></li>
+                                <li><a target="_blank" title="Formulario de contacto" href="http://www.ull.es/view/institucional/ull/Contacto_3/es"><i class="fa fa-list-alt"></i> Formulario de contacto</a></li>
+                                <li><a target="_blank" title="Tel&eacute;fonos" href="http://www.ull.es/view/institucional/ull/Telefonos/es"><i class="fa fa-phone"></i> Directorio telef&oacute;nico</a></li>
+                                <li class="divider"></li>
+                                <li>
+                                    <ul class="rrss text-muted list-inline">
+                                        <li><a target="_blank" href="http://www.facebook.com/universidaddelalaguna" ><i class="fa fa-facebook-square"></i></a></li>
+                                        <li><a target="_blank" href="http://www.tuenti.com/#m=Page&func=index&page_key=1_160_68944913"><i class="fa fa-tumblr-square"></i></a></li>
+                                        <li><a target="_blank" href="http://twitter.com/CanalULL"><i class="fa fa-twitter-square"></i></a></li>
+                                        <li><a target="_blank" href="http://www.linkedin.com/groups/Universidad-Laguna-2656178"><i class="fa fa-linkedin-square"></i></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar navbar-default navbar-app" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <ol class="breadcrumb">
+                        <li class="active" ><a href="#">P&aacute;gina de error</a></li>
+                    </ol>
+                </div>
+                <div class="collapse navbar-collapse navbar-app-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i> Ayuda y soporte <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a target="_blank" title="Portal de servicio" href="http://www.stic.ull.es/info/servicios/servicios/index.asp"><i class="fa fa-globe"></i> Portal de servicio</a></li>
+                                <li><a target="_blank" title="Correo electr&oacute;nico stic@ull.es" href="mailto:stic@ull.es"><i class="fa fa-envelope"></i> stic@ull.es</a></li>
+                                <li><p><i class="fa fa-phone"></i> (+34) 922 31 9180</p></li>
+                                <li><p><i class="fa fa-map-marker"></i> Edificio Central <br/> C/ Delgado Barreto s/n. 38207 <br/>San Crist&oacute;bal de La Laguna</p></li>
+                                <li class="divider"></li>
+                                <li><p>Texto espec&iacute;fico que puede incluir <a href="#">enlaces</a>, texto en <strong>negrita</strong>, <i>cursiva</i> y otros elementos html.</p></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="error-page">
+                        <h2>P&aacute;gina no encontrada</h2>
+                        <p>La p&aacute;gina solicitada puede no estar disponible, haber cambiado de direcci&oacute;n (URL) o no existir.</p>
+                        <p>Rogamos disculpe las molestias.</p>
+                        <p><a target="_blank" class="btn btn-primary" href="http://soporte.ull.es/">Acci&oacute;n &raquo;</a></p>
+                    </div>
+                    <div>
+                        <hr/>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Acciones disponibles</h3>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="javascript:history.back();">Volver a la p&aacute;gina anterior e intentarlo de nuevo.</a></li>
+                                <li class="list-group-item"><a href="http://www.ull.es/">Ir a la p&aacute;gina de inicio de la Universidad de La Laguna.</a></li>
+                                <li class="list-group-item"><a href="http://soporte.ull.es/">Notificar incidencia</a></li>
+                                <li class="list-group-item">
+                                    <form class="form-inline">
+                                        <div class="form-group ">
+                                            <input type="search" class="form-control col-lg-5" placeholder="Buscar">
+                                        </div>
+                                        <button type="submit" id="s" class="btn btn-default"><span class="fa fa-search"></span></button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="address pull-left">
+                            <li><strong>Universidad de La Laguna</strong><br/> Pabell&oacute;n de Gobierno, C/ Molinos de Agua s/n. | San Crist&oacute;bal de La Laguna, Santa Cruz de Tenerife - Espa&#241;a (38200) | Tel&eacute;fono: (+34) 922 31 90 00/01</li>
+                        </ul>
+                        <ul class="list-inline text-muted pull-right">
+                            <li><a title="Facebook" target="_blank" href="http://www.facebook.com/universidaddelalaguna" ><span class="fa fa-facebook-square"></span></a></li>
+                            <li><a title="Tuenti" target="_blank" href="http://www.tuenti.com/#m=Page&func=index&page_key=1_160_68944913"><i class="fa fa-tumblr-square"></i></a></li>
+                            <li><a title="Twitter" target="_blank" href="http://twitter.com/CanalULL"><i class="fa fa-twitter-square"></i></a></li>
+                            <li><a title="LinkedIn" target="_blank" href="http://www.linkedin.com/groups/Universidad-Laguna-2656178"><i class="fa fa-linkedin-square"></i></a></li>
+                            <li><a title="P&aacute;gina web ULL" target="_blank" href="http://www.ull.es/"><i class="fa fa-globe"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+<!-- Mirrored from static.ull.es/v3/docs/examples/pagina-error/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Apr 2016 17:14:24 GMT -->
+</html>
