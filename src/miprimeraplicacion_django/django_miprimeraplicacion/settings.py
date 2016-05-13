@@ -32,6 +32,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Application definition
 
 INSTALLED_APPS = [
+                  
     'django.contrib.admin',
     'django.contrib.admindocs',
     #'django.contrib.auth',
@@ -45,12 +46,19 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     
+    # django-helpdesk
+    'django.contrib.sites',
+        #'django.contrib.admin',  # Required for helpdesk admin/maintenance
+    'django.contrib.humanize',  # Required for elapsed time formatting
+    'markdown_deux',  # Required for Knowledgebase item formatting
+    'bootstrapform', # Required for nicer formatting of forms with the default templates
+    'helpdesk',  # This is us!
     #===========================================
     # django-cas CONFIGURATION  
     #===========================================
     # https://bitbucket.org/cpcc/django-cas/
     #===========================================
-   # 'django_cas',
+    'django_cas',
    
    # MIS APPS
     'accounts',
@@ -75,11 +83,11 @@ MIDDLEWARE_CLASSES = [
     #===========================================
     # https://bitbucket.org/cpcc/django-cas/
     #===========================================
-    #'django.middleware.common.CommonMiddleware',
-    #'django.contrib.sessions.middleware.SessionMiddleware',
-    #'django.contrib.auth.middleware.AuthenticationMiddleware',
-    #'django_cas.middleware.CASMiddleware',
-    #'django.contrib.admindocs.middleware.XViewMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_cas.middleware.CASMiddleware',
+    'django.contrib.admindocs.middleware.XViewMiddleware',
 ]
 
 #===========================================
@@ -90,7 +98,7 @@ MIDDLEWARE_CLASSES = [
 AUTHENTICATION_BACKENDS = (
     
     
-    #'django_cas.backends.CASBackend',
+    'django_cas.backends.CASBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -149,7 +157,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -162,7 +170,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-#SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 # Additional locations of static files
 STATICFILES_DIRS = [
@@ -177,8 +185,8 @@ STATICFILES_DIRS = [
 #===========================================
 # https://bitbucket.org/cpcc/django-cas/
 #===========================================
-#CAS_SERVER_URL='http://login.ull.es/cas-1/'
-#CAS_VERSION='CAS_2_SAML_1_0'
+CAS_SERVER_URL='http://login.ull.es/cas-1/'
+CAS_VERSION='CAS_2_SAML_1_0'
 
 #Ficheros est�ticos
 STATIC_URL = '/static/'
@@ -191,3 +199,6 @@ STATIC_ROOT = ''
 # tutorial_django/settings.py
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/accounts/logout/'
+
+#site
+SITE_ID = 1

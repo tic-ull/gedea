@@ -1,36 +1,46 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
-    
-<!-- Mirrored from static.ull.es/v3/docs/examples/dashboard/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Apr 2016 17:32:03 GMT -->
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+
 <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Universidad de La Laguna">
-        <meta name="keywords" content="Universidad de La Laguna" />
-        <meta name="author" content="Universidad de La Laguna" />
 
-        <title>Universidad de La Laguna - T&iacute;tulo aplicaci&oacute;n o servicio</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <link href="{% static "web/css/ull.min.css" %}" rel="stylesheet">
-    <script src="{% static "web/js/bootstrap.min.js" %}">
-    <!--[if lt IE 9]><script src="//static.ull.es/v3/dist/js/ullie.min.js"></script><![endif]-->
-    <script src="{% static "web/js/jquery.js" %}"></script>
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "web/dist/css/bootstrap.min.css" %}" rel="stylesheet">
 
-    <title>Universidad de La Laguna - T&iacute;tulo aplicaci&oacute;n o servicio</title>
+    <!-- MetisMenu CSS -->
+    <link href="{% static "web/dist/metisMenu.min.css"%}" rel="stylesheet">
 
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "web/img/apple-touch-icon-144-precomposed.png" %}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "web/img/apple-touch-icon-114-precomposed.png" %}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="{% static "web/img/apple-touch-icon-72-precomposed.png" %}">
-    <link rel="apple-touch-icon-precomposed" href="{% static "web/img/apple-touch-icon-57-precomposed.png" %}">
-    <link rel="shortcut icon" href="{% static "web/img/favicon.ico" %}">
-    </head>
+    <!-- Timeline CSS -->
+    <link href="{% static "web/dist/css/timeline.css" %}" rel="stylesheet">
 
-    <body>
- Hola de nuevo {{ user.username }}<br>
-            <div class="navbar navbar-default navbar-ull" role="navigation">
+    <!-- Custom CSS -->
+    <link href="{% static "web/dist/css/sb-admin-2.css" %}" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="{% static "web/bower_components/morrisjs/morris.css" %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static  "web/bower_components/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+      <div class="navbar navbar-default navbar-ull" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-app-collapse">
@@ -102,48 +112,17 @@
                                     <li><p>Texto espec&iacute;fico que puede incluir <a href="#">enlaces</a>, texto en <strong>negrita</strong>, <i>cursiva</i> y otros elementos html.</p></li>
                                 </ul>
                             </li>
-                            <li><a href="#" class="btn btn-success btn-signin"><i class="fa fa-sign-in"></i> Iniciar sesi&oacute;n</a></li>
+                            <!--<li><a href="#" class="btn btn-success btn-signin"><i class="fa fa-sign-in"></i> Iniciar sesi&oacute;n</a></li>-->
                             <li><a href="{% url 'accounts.logout' %}" class="btn btn-danger btn-signout"><i class="fa fa-sign-out"></i> Cerrar sesi&oacute;n</a></li>
                         </ul>
                     </div>
+                    
+                    
                 </div>
             </div>
 
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-9 col-md-push-3" role="main">
-                        <h1 class="page-header">T&iacute;tulo principal</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum erat metus, tempor eleifend odio sagittis vitae. Phasellus nunc lectus, pellentesque et tincidunt lacinia, bibendum id ante. Ut suscipit ac tellus eu molestie. Ut non rhoncus sapien. Maecenas lacinia vehicula facilisis. Etiam auctor consequat tortor eget ornare. Suspendisse eros nulla, tincidunt vitae fringilla vel, mattis id ante.</p>
-                        <div class="bg-success">
-                            <strong>Ejemplo de notificaci&oacute;n</strong><br/>Contenido.
-                        </div>
-                        <p>Integer faucibus nunc eu quam dignissim, nec iaculis nisl ultrices. Integer sed ultricies erat. Aliquam vestibulum vitae risus eget bibendum. Vestibulum varius leo nec blandit dapibus. Duis malesuada ultricies mi, ac dictum mauris imperdiet quis. Nunc vulputate tincidunt neque, vitae sagittis libero iaculis vitae. In molestie dignissim nibh. Etiam ut pellentesque leo. Ut non mattis dolor. Integer gravida risus lectus. Sed sit amet feugiat nisi.</p>
-                        <div class="bs-callout bs-callout-danger">
-                            <h4>Ejemplo de contenido destacado</h4>
-                            Integer faucibus nunc eu quam dignissim, nec iaculis nisl ultrices. Integer sed ultricies erat. Aliquam vestibulum vitae risus eget bibendum. Vestibulum varius leo nec blandit dapibus. Duis malesuada ultricies mi, ac dictum mauris imperdiet quis. Nunc vulputate tincidunt neque, vitae sagittis libero iaculis vitae. In molestie dignissim nibh. Etiam ut pellentesque leo. Ut non mattis dolor. Integer gravida risus lectus. Sed sit amet feugiat nisi.
-                        </div>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <h2>T&iacute;tulo 1</h2>
-                                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                                    <p><a role="button" href="#" class="btn btn-default">Acceder &raquo;</a></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h2>T&iacute;tulo 2</h2>
-                                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                                    <p><a role="button" href="#" class="btn btn-default">Acceder &raquo;</a></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h2>T&iacute;tulo 3</h2>
-                                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                                    <p><a role="button" href="#" class="btn btn-default">Acceder &raquo;</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-md-3 col-md-pull-9 sidebar">
+ <div class="col-md-2 ">
                         <div class="panel panel-default panel-ull color-7A3B7A">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-user"></i> Área personal</h3>
@@ -166,80 +145,219 @@
                                 </ul>
                             </div>
                         </div>
-
-                        <div class="panel panel-default panel-ull color-7A3B7A">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-home"></i> T&iacute;tulo bloque</h3>
-                            </div>
-                            <div class="panel-body">
-                                <ul class="nav nav-pills nav-stacked">
-                                    <li>
-                                        <dl>
-                                            <dt>Informaci&oacute;n est&aacute;tica</dt>
-                                            <dd>Contenido</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="divider"> </li>
-                                    <li><a href="#">Enlaces del men&uacute; principal 1</a></li>
-                                    <li><a href="#">Enlaces del men&uacute; principal 2</a></li>
-                                </ul>
+                        </div>
+        <div id="page-wrapper">
+        
+           <!-- <div class="row">
+            
+                <div class="col-lg-12">
+                    <h1 class="page-header">Dashboard</h1>
+                </div>
+            </div> -->
+            
+            <!-- /.row -->
+            <div class="row">
+            
+            
+            <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-user"></i>  <a href="index.html">Usuario Externo</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-table"></i> Panel principal
+                            </li>
+                        </ol>
+            
+            
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i style="color: #fff;" class="fa fa-ticket fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">26</div>
+                                    <div>Tickets activos!</div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="panel panel-default panel-ull color-336699">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-file"></i> T&iacute;tulo de bloque</h3>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">Ver detalles</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
                             </div>
-                            <div class="panel-body">
-                                <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#">Ejemplo de enlace 1</a></li>
-                                    <li><a href="#">Ejemplo de enlace 2 mucho m&aacute;s largo que el anterior</a></li>
-                                    <li><a href="#">Enlace 3</a></li>
-                                    <li><a href="#">Ejemplo de separador </a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Ejemplo de separador 2</a></li>
-                                    <li><a href="#">M&aacute;s opciones</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="panel panel-default panel-ull">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-comment"></i> Enlaces de inter&eacute;s</h3>
-                            </div>
-                            <div class="panel-body">
-                                <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#">Link 1</a></li>
-                                    <li><a href="#">Link 2</a></li>
-                                    <li><a href="#">Link 3</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i style="color: #fff;" class="fa fa-folder-open fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">12</div>
+                                    <div>Tickets abiertos!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">Ver detalles</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i style="color:#fff" class="fa fa-retweet fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">124</div>
+                                    <div>Tickets resueltos!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">Ver detalles</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i style="color:#fff" class="fa fa-folder fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">13</div>
+                                    <div>Tickets cerrados!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">Ver detalles</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-
-
-        <div id="footer">
-            <div class="container-fluid">
+        
+                    
+                <!-- /.col-lg-8 -->
                 <div class="row">
-                    <div class="col-xs-12">
-                        <ul class="address pull-left">
-                            <li><strong>Universidad de La Laguna</strong><br/> Pabell&oacute;n de Gobierno, C/ Molinos de Agua s/n. | San Crist&oacute;bal de La Laguna, Santa Cruz de Tenerife - Espa&#241;a (38200) | Tel&eacute;fono: (+34) 922 31 90 00/01</li>
-                        </ul>
-                        <ul class="list-inline text-muted pull-right">
-                            <li><a title="Facebook" target="_blank" href="http://www.facebook.com/universidaddelalaguna" ><span class="fa fa-facebook-square"></span></a></li>
-                            <li><a title="Tuenti" target="_blank" href="http://www.tuenti.com/#m=Page&func=index&page_key=1_160_68944913"><i class="fa fa-tumblr-square"></i></a></li>
-                            <li><a title="Twitter" target="_blank" href="http://twitter.com/CanalULL"><i class="fa fa-twitter-square"></i></a></li>
-                            <li><a title="LinkedIn" target="_blank" href="http://www.linkedin.com/groups/Universidad-Laguna-2656178"><i class="fa fa-linkedin-square"></i></a></li>
-                            <li><a title="P&aacute;gina web ULL" target="_blank" href="http://www.ull.es/"><i class="fa fa-globe"></i></a></li>
-                        </ul>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-ticket fa-fw"></i> Generar ticket
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small"><em>4 minutes ago</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small"><em>12 minutes ago</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small"><em>27 minutes ago</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small"><em>43 minutes ago</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small"><em>11:32 AM</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-bolt fa-fw"></i> Server Crashed!
+                                    <span class="pull-right text-muted small"><em>11:13 AM</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-warning fa-fw"></i> Server Not Responding
+                                    <span class="pull-right text-muted small"><em>10:57 AM</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-shopping-cart fa-fw"></i> New Order Placed
+                                    <span class="pull-right text-muted small"><em>9:49 AM</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-money fa-fw"></i> Payment Received
+                                    <span class="pull-right text-muted small"><em>Yesterday</em>
+                                    </span>
+                                </a>
+                            </div>
+                            <!-- /.list-group -->
+                            <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+                        </div>
+                        <!-- /.panel-body -->
                     </div>
-                </div>
+                    <!-- /.panel -->
+             
+                
+                
+                
             </div>
+            <!-- /.row -->
+            
+            
+            
+            
+            
         </div>
-    </body>
+        <!-- /#page-wrapper -->
 
-<!-- Mirrored from static.ull.es/v3/docs/examples/dashboard/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Apr 2016 17:32:06 GMT -->
+    </div>
+    <!-- /#wrapper -->
+<link href="{% static "web/css/ull.min.css" %}" rel="stylesheet">
+    <script src="{% static "web/js/bootstrap.min.js" %}">
+    <!--[if lt IE 9]><script src="//static.ull.es/v3/dist/js/ullie.min.js"></script><![endif]-->
+    <script src="{% static "web/js/jquery.js" %}"></script>
+    <!-- jQuery -->
+    <script src="{% static "Web/bower_components/jquery/dist/jquery.min.js" % } "></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "web/bower_components/bootstrap/dist/js/bootstrap.min.js" %} "></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="{% static "web/bower_components/metisMenu/dist/metisMenu.min.js" % }></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="{% static "web/bower_components/raphael/raphael-min.js" % } "></script>
+    <script src="{% static "web/bower_components/morrisjs/morris.min.js" % }"></script>
+    <script src="{% static "web/js/morris-data.js" %} "></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static "web/dist/js/sb-admin-2.js" %} "></script>
+
+</body>
+
 </html>

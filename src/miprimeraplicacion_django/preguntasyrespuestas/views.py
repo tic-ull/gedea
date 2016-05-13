@@ -11,7 +11,7 @@ from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from django.template.context import RequestContext
 from django.views.decorators.csrf import csrf_exempt
-
+import json
 from preguntasyrespuestas.models import Pregunta
 from preguntasyrespuestas.models import SignUpForm
 
@@ -56,6 +56,32 @@ def index_view(request):
 
 def faq_view(request):
     return render_to_response('web/faq.html')
+
+def info_view(request):
+    # Comprobar si en la misma pagina hay uno en formato libre!!!!
+    # se podria comprobar en el fichero general?!?!?!?! coincidiendo url y nombre ?!??!?!?!?!??!!?
+    # Archivo JSON con los datos recogidos
+    objs = json.loads("[%s]"%(open('D:/Google drive/Workspace/miprimeraplicacion_django/static/dataULL.json').read().replace('}{', '},{')))
+    json_data = json.dumps(objs)
+    item_dict = json.loads(json_data)
+
+    #print item_dict[0][0]['Extension']      == .pdf
+    #print len(objs[0])                      == 47
+
+    positive = 0;
+    negative = 0;
+    for i in range(len(objs[0])):
+        if item_dict[0][i]['Extension'] == ".pdf":
+            positive=positive+1
+        if item_dict[0][i]['Extension'] == ".odt":
+            negative=negative+1
+        if item_dict[0][i]['Extension'] == ".docx":
+            negative=negative+1
+        if item_dict[0][i]['Extension'] == ".doc":
+            negative=negative+1
+        if item_dict[0][i]['Extension'] == ".ppt":
+            negative=negative+1
+    return render_to_response('web/info.html', {'positive': positive , 'negative': negative})
 
 def error(request):
     questions = Pregunta.objects.all()

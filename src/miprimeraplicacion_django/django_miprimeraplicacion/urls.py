@@ -43,8 +43,11 @@ urlpatterns = [
 
     #url(r'^signup/$', preguntasyrespuestas.views.signup, name='signup'),
     url(r'^faq/$', preguntasyrespuestas.views.faq_view, name='faq'),
+    
+    url(r'^info/$', preguntasyrespuestas.views.info_view, name='info'),
     #url(r'^my/$', preguntasyrespuestas.views.my, name='my'),
     url(r'^$', preguntasyrespuestas.views.index_view, name='main'),
+    url(r'helpdesk/', include('helpdesk.urls')),
     #url(r'^preguntas/(?P<pregunta_id>\d+)/$','preguntasyrespuestas.views.pregunta_detalle', name='pregunta_detalle'),
     
     #===========================================

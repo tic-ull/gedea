@@ -138,19 +138,19 @@
  			<div class="alert alert-danger alert-lg alert-block" role="alert">{{ form.username.errors|join:", " }}</div>
  		 {% endif %}</p>
  		 
-         <input for="username" type="text" autocomplete="false"   placeholder="email" value="{{ form.fields.email.initial| default_if_none:"" }}" style="margin-bottom:10px;" tabindex="1" title="Introduzca su nombre de ull.es). " class="form-control" name="{{ form.email.html_name }}" id="email">
+         <input for="username" type="text" autocomplete="false"   placeholder="email" value="{{ form.email.value| default_if_none:"" }}" style="margin-bottom:10px;" tabindex="1" title="Introduzca su nombre de ull.es). " class="form-control" name="{{ form.email.html_name }}" id="email">
          
          {% if form.email.errors %}
  			<div class="alert alert-danger alert-lg alert-block" role="alert">{{ form.email.errors|join:", " }}</div>
  		 {% endif %}</p>
  		 
-         <input type="text" autocomplete="false" value=""  placeholder="Contraseña" style="margin-bottom:10px;" tabindex="1" title="Intro " class="form-control" name="{{ form.password.html_name }}" id="password">
+         <input type="password" autocomplete="false" value=""  placeholder="Contraseña" style="margin-bottom:10px;" tabindex="1" title="Intro " class="form-control" name="{{ form.password.html_name }}" id="password">
          
-          {% if form.password.errors %}
+         {% if form.password.errors %}
  			<div class="alert alert-danger alert-lg alert-block" role="alert">{{ form.password.errors|join:", " }}</div>
  		 {% endif %}</p>
  		                
-         <input type="text" autocomplete="false" value=""  placeholder="Repita la contraseña" style="margin-bottom:10px;" tabindex="1" title="Introduzca su nombre de usuario de la ULL sin incluir el dominio (@ull.es). " class="form-control" name="{{ form.password2.html_name }}" id="password2">
+         <input type="password" autocomplete="false" value=""  placeholder="Repita la contraseña" style="margin-bottom:10px;" tabindex="1" title="Introduzca su nombre de usuario de la ULL sin incluir el dominio (@ull.es). " class="form-control" name="{{ form.password2.html_name }}" id="password2">
          
          {% if form.password2.errors %}
  			<div class="alert alert-danger alert-lg alert-block" role="alert">{{ form.password2.errors|join:", " }}</div>
