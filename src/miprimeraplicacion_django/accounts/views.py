@@ -4,10 +4,11 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.core.urlresolvers import reverse
-from django.db.models.fields import Empty
 from django.shortcuts import redirect
 from django.shortcuts import render, render_to_response
+
+from django.core.urlresolvers import reverse
+from django.db.models.fields import Empty
 from django.template import RequestContext
 
 from .forms import RegistroUserForm

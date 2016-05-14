@@ -1,16 +1,13 @@
 """CAS authentication middleware"""
 
-from urllib.parse import urlencode
-
-from django.conf import settings
 from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.contrib.auth.views import login, logout
+
+from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponseForbidden
-
-
-
 from django_cas.views import login as cas_login, logout as cas_logout
+from urllib.parse import urlencode
 
 
 __all__ = ['CASMiddleware']

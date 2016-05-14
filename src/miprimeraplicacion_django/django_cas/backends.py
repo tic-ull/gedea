@@ -1,13 +1,12 @@
 """CAS authentication backend"""
 
 import urllib
+
+from django.conf import settings
+from django_cas.models import User
 from urllib.parse import urlencode
 from urllib.parse import urljoin
 from urllib.request import urlopen
-
-from django.conf import settings
-
-from django_cas.models import User
 
 
 __all__ = ['CASBackend']
@@ -127,7 +126,7 @@ def _verify_cas2_saml(ticket, service):
         user = None
         attributes = {}
         response = page.read()
-        print response
+        print(response)
         tree = ElementTree.fromstring(response)
         # Find the authentication status
         success = tree.find('.//' + SAML_1_0_PROTOCOL_NS + 'StatusCode')

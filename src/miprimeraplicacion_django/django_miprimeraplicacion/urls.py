@@ -16,15 +16,18 @@ Including another URLconf
 """
 
 
-from django.conf import settings
-from django.conf.urls.static import static
 from django.contrib import admin
-admin.autodiscover()
-from django.conf.urls import patterns, url, include
 from django.contrib.auth.views import login
 
+from django.conf import settings
+from django.conf.urls import patterns, url, include
+from django.conf.urls.static import static
 import django_cas.views
 import preguntasyrespuestas.views
+
+
+admin.autodiscover()
+
 
 
 urlpatterns = [
@@ -47,7 +50,6 @@ urlpatterns = [
     url(r'^info/$', preguntasyrespuestas.views.info_view, name='info'),
     #url(r'^my/$', preguntasyrespuestas.views.my, name='my'),
     url(r'^$', preguntasyrespuestas.views.index_view, name='main'),
-    url(r'helpdesk/', include('helpdesk.urls')),
     #url(r'^preguntas/(?P<pregunta_id>\d+)/$','preguntasyrespuestas.views.pregunta_detalle', name='pregunta_detalle'),
     
     #===========================================

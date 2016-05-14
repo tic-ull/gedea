@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for django_miprimeraplicacion project.
 
@@ -11,6 +12,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -46,13 +48,6 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     
-    # django-helpdesk
-    'django.contrib.sites',
-        #'django.contrib.admin',  # Required for helpdesk admin/maintenance
-    'django.contrib.humanize',  # Required for elapsed time formatting
-    'markdown_deux',  # Required for Knowledgebase item formatting
-    'bootstrapform', # Required for nicer formatting of forms with the default templates
-    'helpdesk',  # This is us!
     #===========================================
     # django-cas CONFIGURATION  
     #===========================================
@@ -97,9 +92,9 @@ MIDDLEWARE_CLASSES = [
 #===========================================
 AUTHENTICATION_BACKENDS = (
     
-    
-    'django_cas.backends.CASBackend',
     'django.contrib.auth.backends.ModelBackend',
+    'django_cas.backends.CASBackend',
+
 )
 
 
@@ -108,7 +103,7 @@ ROOT_URLCONF = 'django_miprimeraplicacion.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["D:/Google drive/Workspace/miprimeraplicacion_django/static"],
+        'DIRS': ["/home/dru/workspace/gedea/src/miprimeraplicacion_django/static"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -171,6 +166,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+
 
 # Additional locations of static files
 STATICFILES_DIRS = [

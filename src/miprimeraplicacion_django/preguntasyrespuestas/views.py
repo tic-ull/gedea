@@ -3,15 +3,16 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.core.urlresolvers import reverse
-from django.http.response import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render_to_response, redirect
 from django.shortcuts import render_to_response
 from django.shortcuts import render_to_response
+import json
+
+from django.core.urlresolvers import reverse
+from django.http.response import HttpResponseRedirect
 from django.template.context import RequestContext
 from django.template.context import RequestContext
 from django.views.decorators.csrf import csrf_exempt
-import json
 from preguntasyrespuestas.models import Pregunta
 from preguntasyrespuestas.models import SignUpForm
 
@@ -61,7 +62,7 @@ def info_view(request):
     # Comprobar si en la misma pagina hay uno en formato libre!!!!
     # se podria comprobar en el fichero general?!?!?!?! coincidiendo url y nombre ?!??!?!?!?!??!!?
     # Archivo JSON con los datos recogidos
-    objs = json.loads("[%s]"%(open('D:/Google drive/Workspace/miprimeraplicacion_django/static/dataULL.json').read().replace('}{', '},{')))
+    objs = json.loads("[%s]"%(open('/home/dru/workspace/gedea/src/miprimeraplicacion_django/static/dataULL.json').read().replace('}{', '},{')))
     json_data = json.dumps(objs)
     item_dict = json.loads(json_data)
 

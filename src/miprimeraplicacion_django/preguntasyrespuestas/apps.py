@@ -1,5 +1,6 @@
-from django.apps import AppConfig
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+from django.apps import AppConfig
 
 
 class PreguntasyrespuestasConfig(AppConfig):

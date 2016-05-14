@@ -1,12 +1,12 @@
 """CAS login/logout replacement views"""
 
-from urllib.parse import urlencode
-from urllib.parse import urljoin
-
-from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import REDIRECT_FIELD_NAME
+
+from django.conf import settings
 from django.http import HttpResponseRedirect, HttpResponseForbidden
+from urllib.parse import urlencode
+from urllib.parse import urljoin
 
 
 __all__ = ['login', 'logout']

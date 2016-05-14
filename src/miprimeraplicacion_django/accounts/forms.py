@@ -2,6 +2,7 @@
 from django import forms
 from django.contrib.auth.models import User
 
+
 class RegistroUserForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(attrs={'placehoder': 'username'}))
     email = forms.EmailField(widget=forms.TextInput(attrs={'placehoder': 'email'}))
