@@ -1,6 +1,6 @@
 # GEDEA
 
-Aplicación web desarrollada en [Django](https://www.djangoproject.com/) para la [OSL](https://osl.ull.es/).
+Aplicación web de gestión de estándares abiertos desarrollada en [Django](https://www.djangoproject.com/) para la [OSL](https://osl.ull.es/).
 
 > Esta aplicación web sigue la Política de los Estándares Abiertos aprobada por la ULL
 
@@ -60,14 +60,24 @@ $ sudo apt-get install default-jdk
 $ java -version
 ```
 
+Necesitamos **Python**:
+```sh
+sudo apt-get install python3-dev
+```
 
+Necesitamos el **Scrapy-Python** para la actualización de nuestro dataULL.json:
+```sh
+pip install scrapy
+```
 
-
-## USAGE
+## Uso | Usage
+Ejecución de nuestra aplicación:
 ```sh
 $ python3 manage.py runserver
 ```
 
+Actualización de **dataULL.json:**
+# scrapy runspider -s DEPTH_LIMIT=2 crawl.py `-o dataULL.json
 
 
 
@@ -75,8 +85,7 @@ $ python3 manage.py runserver
 
 
 
-
-## OFFICIAL SITE
+## Sitio oficial | Official site
 
 Repositorio Git:  [github.com/tic-ull/gedea](https://github.com/tic-ull/gedea)
 
