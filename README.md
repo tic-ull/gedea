@@ -5,7 +5,7 @@ Aplicación web de gestión de estándares abiertos desarrollada en [Django](htt
 > Esta aplicación web sigue la Política de los Estándares Abiertos aprobada por la ULL
 
 
-## Requísitos | Requirements
+## Requisitos | Requirements
 
 Los siguientes paquetes han sido utilizados en el desarrollo de la aplicación web:
 
