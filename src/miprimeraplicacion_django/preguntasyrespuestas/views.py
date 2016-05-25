@@ -15,6 +15,11 @@ from django.template.context import RequestContext
 from django.views.decorators.csrf import csrf_exempt
 from preguntasyrespuestas.models import Pregunta
 from preguntasyrespuestas.models import SignUpForm
+# rt
+import http.cookiejar
+import urllib
+from urllib.request import urlopen
+import pdb
 
 
 def signup(request):
@@ -90,9 +95,59 @@ def error(request):
 
 @login_required()
 def my(request):
-    questions = Pregunta.objects.all()
+    # creates a cookie for the rtserver with the credentials given at initialization.
+    # define your credentials here
+    access_user = 'root'
+    access_password = 'password'
+
+    # here is the RequestTracker URI we try to access
+    uri = 'http://localhost:8080/REST/1.0/'
+           
+    # trying login on rt server
+    cj = cookielib.LWPCookieJar()
+    opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
+    urllib2.install_opener(opener)
+    data = {'user': access_user, 'pass': access_password}
+    ldata = urllib.urlencode(data)
+    login = urllib2.Request(uri, ldata)
+    try:
+       response = urllib2.urlopen(login)
+       print(response.read())
+       questions = ("login successful")
+    except urllib2.URLError:
+       # could not connect to server
+       questions = ("Not able to login")
+    pdb.set_trace()  
+    print(request.POST.get('centro'))
     return render_to_response('web/my.html', {'questions': questions})
 
+
+#def login_users_view(request):
+    # Si el usuario esta ya logueado, lo redireccionamos a index_view
+ #   if request.user.is_authenticated():
+  #      return redirect(reverse('accounts.my')) # ??
+        
+  #  if request.method == 'POST':
+   ##     username = request.POST.get('username')
+     #   password = request.POST.get('password')
+      #  user = authenticate(username=username, password=password)
+        #messages.success(request, 'Te has registrado correctamente.')
+      #  if user is not None: # si EXISTE el usuario
+            #print("Si el usuario NO existe")
+            
+       #     if user.is_active:
+        #        login(request, user)
+         #       return redirect(reverse('accounts.my'))
+          #  else:
+                # Redireccionar informando que la cuenta esta inactiva
+                # Lo dejo como ejercicio al lector :)
+                #return messages.add_message(request, messages.error, "lOGED!")
+           #     pass
+       # else: 
+        #    messages.error(request, 'El usuario o el password son incorrectos. Intentalo de nuevo.')
+         #   return render_to_response('web/login.html', {}, RequestContext(request, {}))
+                
+    #return render_to_response('web/login.html', RequestContext(request, {}))
 
 def login(request):
     # Si el usuario esta ya logueado, lo redireccionamos a index_view

@@ -91,14 +91,13 @@ MIDDLEWARE_CLASSES = [
 # https://bitbucket.org/cpcc/django-cas/
 #===========================================
 AUTHENTICATION_BACKENDS = (
-    
     'django.contrib.auth.backends.ModelBackend',
     'django_cas.backends.CASBackend',
 
 )
 
 
-ROOT_URLCONF = 'django_miprimeraplicacion.urls'
+ROOT_URLCONF = 'django_gedea.urls'
 
 TEMPLATES = [
     {
@@ -116,7 +115,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'django_miprimeraplicacion.wsgi.application'
+WSGI_APPLICATION = 'django_gedea.wsgi.application'
 
 
 # Database
