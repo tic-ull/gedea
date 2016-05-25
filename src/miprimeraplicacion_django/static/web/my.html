@@ -177,8 +177,8 @@
                                     <i style="color: #fff;" class="fa fa-ticket fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
-                                    <div>Tickets activos!</div>
+                                    <div class="huge">{{ticketsNew}}</div>
+                                    <div>Tickets nuevos!</div>
                                 </div>
                             </div>
                         </div>
@@ -199,7 +199,7 @@
                                     <i style="color: #fff;" class="fa fa-folder-open fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
+                                    <div class="huge">{{ticketsOpen}}</div>
                                     <div>Tickets abiertos!</div>
                                 </div>
                             </div>
@@ -221,7 +221,7 @@
                                     <i style="color:#fff" class="fa fa-retweet fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
+                                    <div class="huge">{{ticketsResolved}}</div>
                                     <div>Tickets resueltos!</div>
                                 </div>
                             </div>
@@ -243,8 +243,8 @@
                                     <i style="color:#fff" class="fa fa-folder fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">13</div>
-                                    <div>Tickets cerrados!</div>
+                                    <div class="huge">{{ticketsClosed}}</div>
+                                    <div>Tickets parados!</div>
                                 </div>
                             </div>
                         </div>
@@ -277,14 +277,16 @@
  
         {% csrf_token %}
 
-        <input type="text" autocomplete="false" value="{{ user.username }}" placeholder="Nombre completo" style="margin-bottom:10px;" tabindex="1" title="Introduzca un nombre de usuario. " class="form-control" name="{{ form.username.html_name }}" id="username">
+        <!--<input type="text" autocomplete="false" value="{{ user.username }}" placeholder="Nombre completo" style="margin-bottom:10px;" tabindex="1" title="Introduzca un nombre de usuario. " class="form-control" name="{{ form.username.html_name }}" id="username">
          
          {% if form.username.errors %}
             <div class="alert alert-danger alert-lg alert-block" role="alert">{{ form.username.errors|join:", " }}</div>
-         {% endif %}</p>
+         {% endif %}</p>-->
          
-         <input for="username" type="text" autocomplete="false"   placeholder="Correo electrónico (@ull.es/ @ull.edu.es/ @gmail.es)" value="{{ user.email }}" style="margin-bottom:10px;" tabindex="1" title="Introduzca su nombre de ull.es). " class="form-control" name="{{ form.email.html_name }}" id="email">
+         <input type="text" autocomplete="false"   placeholder="Correo electrónico (@ull.es/ @ull.edu.es/ @gmail.es)" value="{{ user.email }}" style="margin-bottom:10px;" tabindex="1" title="Introduzca su nombre de ull.es). " class="form-control" name="email" id="email">
          
+         <!--name="{{ form.email.html_name }}"--> 
+
          {% if form.email.errors %}
             <div class="alert alert-danger alert-lg alert-block" role="alert">{{ form.email.errors|join:", " }}</div>
          {% endif %}</p>
@@ -297,7 +299,7 @@
         <label>
         <span class="form-control" style="border:0px solid transparent; box-shadow: none;">Centro relacionado: </span>
         </label>
-        <select class="form-control" name="centro">
+        <select class="form-control" name="centro" id="centro">
             <option value="none">* No aplicable</option><option disabled="">FACULTAD DE CIENCIAS</option><option value="biologia@aulas.ull.es">Seccion de Biología</option><option value="fisica@aulas.ull.es">Seccion de Física</option><option value="matematicas@aulas.ull.es">Seccion de Matemáticas</option><option value="quimica@aulas.ull.es">Seccion de Química</option><option disabled="">FACULTAD DE CIENCIAS DE LA SALUD</option><option value="enfermeria@aulas.ull.es">Seccion de Enfermería y Fisioterapia</option><option value="lapalma@aulas.ull.es">Extensión de Enfermería (La Palma)</option><option value="farmacia@aulas.ull.es">Seccion de Farmacia</option><option value="psicologia@aulas.ull.es">Seccion de Psicología</option><option disabled="">FACULTAD DE CIENCIAS POLITICAS, SOCIALES Y DE LA COMUNICACIÓN</option><option value="cinformacion@aulas.ull.es">Seccion de C. de la Información</option><option value="cpoliticas@aulas.ull.es">Seccion de C. Políticas y Sociales</option><option disabled="">FACULTAD DE DERECHO</option><option value="derecho@aulas.ull.es">Facultad de Derecho</option><option disabled="">FACULTAD DE ECONOMIA, EMPRESA Y TURISMO</option><option value="economicas@aulas.ull.es">Seccion de C. Económicas y Empresariales</option><option value="empresariales@aulas.ull.es">Seccion de Empresa y Turismo</option><option value="adeje@aulas.ull.es">Extensión de Empresa y Turismo (Adeje)</option><option disabled="">FACULTAD DE EDUCACION</option><option value="educacion@aulas.ull.es">Facultad de Educación</option><option disabled="">FACULTAD DE HUMANIDADES</option><option value="bellasartes@aulas.ull.es">Seccion de Bellas Artes</option><option value="filologia@aulas.ull.es">Seccion de Filología</option><option value="filosofia@aulas.ull.es">Seccion de Filosofía</option><option value="geohist@aulas.ull.es">Seccion de Geografía e Historia</option><option disabled="">ESCUELA POLITECNICA SUPERIOR DE INGENIERIA</option><option value="agraria@aulas.ull.es">Seccion de Ingeniería Agraria</option><option value="arquitectura@aulas.ull.es">Seccion de Arquitectura Técnica</option><option value="nautica@aulas.ull.es">Seccion de Náutica, Máquinas y Radioelectrónica Naval</option><option disabled="">ESCUELA SUPERIOR DE INGENIERIA Y TECNOLOGIA</option><option value="industrial@aulas.ull.es">Seccion de Ingeniería Industrial</option><option value="informatica@aulas.ull.es">Seccion de Ingeniería Informática</option><option disabled="">OTROS</option><option value="cmayores@osl.ull.es">Colegio Mayor 'San Fernando'</option><option value="ccguajara@aulas.ull.es">ESA CajaCanarias Guajara</option><option value="ccanchieta@aulas.ull.es">ESA CajaCanarias Anchieta</option><option value="osl@aulas.ull.es">Oficina de Software Libre</option>
         </select>
 
@@ -307,20 +309,22 @@
 
        </fieldset>
        
-       <input for="username" type="text" autocomplete="false"   placeholder="Asunto (Debe ser indetificativo)" value="{{ form.email.value| default_if_none:"" }}" style="margin-bottom:10px;" tabindex="1" title="Introduzca su nombre de ull.es). " class="form-control" name="{{ form.email.html_name }}" id="email">
+       <fieldset class="form-group">
+       <input type="text"  placeholder="Asunto (Debe ser indetificativo)"  style="margin-bottom:10px;" title="Introduzca su nombre de ull.es). " class="form-control" name="asuntoo" id="asuntoo">
          
          {% if form.email.errors %}
             <div class="alert alert-danger alert-lg alert-block" role="alert">{{ form.email.errors|join:", " }}</div>
          {% endif %}</p>
 
+  </fieldset>
 <fieldset class="form-group">
     
-    <textarea class="form-control" placeholder="Descripción" id="mpleTextea" rows="3"></textarea>
+    <textarea type="text" class="form-control" placeholder="Descripción" name="descrip" id="descrip" rows="3"></textarea>
   </fieldset>
 
 
 
-<fieldset class="form-group">
+<fieldset class="form-group">s
  <label>
         <span class="form-control" style="border:0px solid transparent; box-shadow: none;">Adjuntar fichero: </span>
         </label>

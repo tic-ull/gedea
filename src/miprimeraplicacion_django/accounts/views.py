@@ -15,44 +15,43 @@ from .forms import RegistroUserForm
 from .models import UserProfile
 
 import requests
-
+import rt
 
 
 @login_required
 def my_view(request):
-     # creates a cookie for the rtserver with the credentials given at initialization.
-    # define your credentials here
+    # Credenciales
     access_user = 'root'
     access_password = 'password'
 
-    r = requests.get('http://localhost:8080/REST/1.0/search/ticket/?query=queue=gedea?user=root&pass=password', auth=(access_user, access_password))
-
-    questions = str(r.status_code)
-    questions += str(r.text)
-    #questions= rr.headers['content-type']
+    # Login
+    tracker = rt.Rt('http://localhost:8080/REST/1.0/', access_user, access_password)
+    tracker.login()
     
-    # here is the RequestTracker URI we try to access
-    #uri = 'http://localhost:8080/REST/1.0/'
-           
-    # trying login on rt server
-    #cj = http.cookiejar
-    #opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+    # Datos usuario
+    ticketsNew = len(tracker.search(Queue='gedea', Requestors=request.user.email ,Status='new'))
+    ticketsOpen = len(tracker.search(Queue='gedea', Requestors=request.user.email,Status='open'))
+    ticketsResolved = len(tracker.search(Queue='gedea', Requestors=request.user.email,Status='resolved'))
+    ticketsClosed = len(tracker.search(Queue='gedea', Requestors=request.user.email,Status='stalled'))
+    
+    # Si obtenemos el POST
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        questions=str(email)
+        centro = request.POST.get('centro')
+        questions+=str(centro)
+        asunto = request.POST.get('asuntoo')
+        questions+=str(asunto)
+        descrip = request.POST.get('descrip')
+        questions+=str(descrip)
+        adjunto = request.POST.get('adjunto')
+        
+        tracker.create_ticket(Queue='gedea', Requestors=email, Subject=asunto, Text=descrip)
 
-    #urllib2.install_opener(opener)
-    #data = {'user': access_user, 'pass': access_password}
-    #ldata = urllib.urlencode(data)
-    #login = urllib2.Request(uri, ldata)
-    #try:
-    #   response = urllib2.urlopen(login)
-    #   print(response.read())
-    #   questions = ("login successful")
-    #except urllib2.URLError:
-       # could not connect to server
-    #   questions = ("Not able to login")
-    #pdb.set_trace()  
-    #print(request.POST.get('centro'))
-    return render_to_response('web/my.html', {'questions': questions})
-
+        messages.success(request, 'Tickets creado correctamente.')
+ 
+ 
+    return render_to_response('web/my.html', { 'ticketsNew':ticketsNew, 'ticketsOpen':ticketsOpen, 'ticketsResolved':ticketsResolved, 'ticketsClosed': ticketsClosed}, RequestContext(request, {}))
     #return render(request, 'web/my.html')
 
 
