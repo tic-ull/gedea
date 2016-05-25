@@ -44,31 +44,42 @@ Server:
     * **Versión:** PyDev 4.5.5
 
 
-## Instalación | Installation
-
-
-
-
 
 
 
 ## Desarrollo | Development
+Para que el desarrollo de **gedea** sea más sencillo en una máquina nueva procedemos a la realización del siguiente  `script.sh` con el que será más sencillo la instalación de sus componentes: 
 
-Necesitamos el **Kit de Desarrollo de Java** instalado globalmente para instalar nuestro entorno de desarrollo que será **eclipse + pydev**:
 ```sh
-$ sudo apt-get install default-jdk
-$ java -version
+$ sudo apt-get update        
+
+# Kit de Desarrollo de Java
+$ sudo apt-get install default-jdk      
+$ java -version 
+
+# Python
+$ sudo apt-get install python3-dev      
+
+# Pip
+$ sudo apt-get -y install python-pip    
+
+# Scrapy-python
+$ sudo pip install scrapy   
+
+# rt-1.0.8
+$ wget https://pypi.python.org/packages/00/53/074d1f3af6350491da6712674428bb2441839d34e2b802181a522af3849b/rt-1.0.8.tar.gz
+$ tar -xz rt-1.0.8.tar.gz
+$ cd rt-1.0.8
+$ pip install -r requirements.txt
+
+# Django
+$ sudo pip install django
 ```
 
-Necesitamos **Python**:
-```sh
-sudo apt-get install python3-dev
-```
+* Necesitamos **Django**:
 
-Necesitamos el **Scrapy-Python** para la actualización de nuestro dataULL.json:
-```sh
-$ pip install scrapy
-```
+
+
 
 ## Uso | Usage
 Ejecución de nuestra aplicación:
@@ -78,7 +89,7 @@ $ python3 manage.py runserver
 
 Actualización de **dataULL.json**:
 ```sh
-$ scrapy runspider -s DEPTH_LIMIT=2 crawl.py `-o dataULL.json
+$ scrapy runspider -s DEPTH_LIMIT=2 crawl.py -o dataULL.json
 ```
 
 
