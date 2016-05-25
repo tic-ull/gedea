@@ -67,7 +67,7 @@ sudo apt-get install python3-dev
 
 Necesitamos el **Scrapy-Python** para la actualización de nuestro dataULL.json:
 ```sh
-pip install scrapy
+$ pip install scrapy
 ```
 
 ## Uso | Usage
@@ -76,8 +76,10 @@ Ejecución de nuestra aplicación:
 $ python3 manage.py runserver
 ```
 
-Actualización de **dataULL.json:**
-# scrapy runspider -s DEPTH_LIMIT=2 crawl.py `-o dataULL.json
+Actualización de **dataULL.json**:
+```sh
+$ scrapy runspider -s DEPTH_LIMIT=2 crawl.py `-o dataULL.json
+```
 
 
 
